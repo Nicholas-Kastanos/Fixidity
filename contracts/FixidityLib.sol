@@ -228,7 +228,7 @@ library FixidityLib {
      * precision of x. Values with a precision higher than FixidityLib.digits()
      * will be truncated accordingly.
      */
-    function newFixed(int256 x, uint8 _originDigits)
+    function newFixedFromDigits(int256 x, uint8 _originDigits)
         public
         pure
         returns (int256)
@@ -242,7 +242,7 @@ library FixidityLib {
      * precision of the output x. Values with a precision below than 
      * FixidityLib.digits() will be truncated accordingly.
      */
-    function fromFixed(int256 x, uint8 _destinationDigits)
+    function fromFixedToDigits(int256 x, uint8 _destinationDigits)
         public
         pure
         returns (int256)
