@@ -30,13 +30,13 @@ library ExponentLib {
         } else if (x == 0) {
             return r;
         }
-        int256 tr = 100 * FixidityLib.fixed1();
+        int256 tr = 1 * FixidityLib.fixed1();
         int256 d = tr;
         for (uint8 i = 1; i <= 2 * FixidityLib.digits(); i++) {
             d = (d * x) / (FixidityLib.fixed1() * i);
             tr += d;
         }
-        return trunc_digits(FixidityLib.multiply(tr, r), 2);
+        return FixidityLib.multiply(tr, r);
     }
 
     function powerAny(int256 a, int256 b) 
